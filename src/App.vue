@@ -18,4 +18,9 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+.section{
+  text-align: center;
+
+}
+</style>

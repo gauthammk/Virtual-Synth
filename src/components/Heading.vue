@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <h1 class="title">Add Title Here</h1>
+    <h1 class="title">Virtual Piano</h1>
     <h2 class="subtitle">Add Subtitle Here</h2>
   </div>
 </template>
@@ -11,4 +11,8 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+h2{
+  margin-bottom: 40px;
+}
+</style>
