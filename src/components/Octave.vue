@@ -1,6 +1,6 @@
 <template>
   <div class="column has-text-centered">
-    <div class="buttons is-centered">
+    <div class="buttons is-centered ocatve-style">
       <button class="button is-primary">
         <i class="fas fa-chevron-left"></i>
       </button>
@@ -18,4 +18,9 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.buttons.is-centered{
+  margin: 2px !important;
+  justify-content: center;
+}
+</style>
