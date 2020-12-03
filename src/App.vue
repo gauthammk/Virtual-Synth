@@ -15,6 +15,7 @@ import Piano from "./components/Piano";
 export default {
   name: "App",
   components: { Heading, Octave, Piano },
+  methods: {},
 };
 </script>
 

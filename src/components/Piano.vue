@@ -1,20 +1,18 @@
 <template>
   <!-- Piano contianer -->
-  <div class="container has-text-centered">
+  <div class="piano-container container has-text-centered">
     <!-- Loop through all the keys -->
     <div class="key-container" v-for="key in keys" :key="key.id">
-      <WhiteKey v-if="key.type === 'white'" />
-      <BlackKey v-else />
+      <Key v-bind:pianoKey="key" />
     </div>
   </div>
 </template>
 
 <script>
-import WhiteKey from "./WhiteKey";
-import BlackKey from "./BlackKey";
+import Key from "./Key";
 export default {
   name: "Piano",
-  components: { WhiteKey, BlackKey },
+  components: { Key },
   data: () => ({
     whiteKeyCount: 14,
     blackKeyCount: 10,
@@ -93,5 +91,8 @@ export default {
   flex-grow: unset !important;
   display: inline-block;
   position: relative;
+}
+.piano-contianer {
+  padding: 2rem;
 }
 </style>
