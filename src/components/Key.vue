@@ -43,8 +43,12 @@ export default {
   height: 17vw;
 }
 .key {
-  outline: 1px solid grey;
+  /* outline: solid grey; */
   display: inline-block;
   cursor: pointer;
+  padding: 10%;
+  border: 1px solid #00d1b2;
+  box-shadow: -1px 1px #00d1b2, -2px 2px #00d1b2, -3px 3px #00d1b2,
+    -4px 4px #00d1b2, -5px 5px #00d1b2;
 }
 </style>

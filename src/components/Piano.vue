@@ -1,6 +1,6 @@
 <template>
   <!-- Piano contianer -->
-  <div class="piano-container container has-text-centered">
+  <div class="mt-5 container has-text-centered">
     <!-- Loop through all the keys -->
     <div class="key-container" v-for="key in keys" :key="key.id">
       <Key v-bind:pianoKey="key" />
@@ -91,8 +91,5 @@ export default {
   flex-grow: unset !important;
   display: inline-block;
   position: relative;
-}
-.piano-contianer {
-  padding: 2rem;
 }
 </style>
