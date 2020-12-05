@@ -32,7 +32,7 @@ export default {
 .black-key {
   width: 2.5vw;
   height: 10vw;
-  background-color: black;
+  background-color: #272343;
   z-index: 1;
   position: absolute;
   margin-top: -17vw;
@@ -41,14 +41,15 @@ export default {
 .white-key {
   width: 4vw;
   height: 17vw;
+  background-color: #ffffff;
 }
 .key {
-  /* outline: solid grey; */
   display: inline-block;
   cursor: pointer;
   padding: 10%;
-  border: 1px solid #00d1b2;
-  box-shadow: -1px 1px #00d1b2, -2px 2px #00d1b2, -3px 3px #00d1b2,
-    -4px 4px #00d1b2, -5px 5px #00d1b2;
+  box-shadow: -0.3rem 0.3rem 0 0 #bae8e8;
+}
+.key:active {
+  box-shadow: none;
 }
 </style>

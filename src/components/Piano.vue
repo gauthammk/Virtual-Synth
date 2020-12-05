@@ -129,7 +129,7 @@ export default {
 
 <style scoped>
 .key-container {
-  padding: 0px !important;
+  padding: 1px !important;
   margin: 0px !important;
   max-width: 50% !important;
   flex-grow: unset !important;
