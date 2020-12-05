@@ -18,4 +18,9 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.buttons.is-centered {
+  margin: 2px !important;
+  justify-content: center;
+}
+</style>
