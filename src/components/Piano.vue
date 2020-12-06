@@ -1,24 +1,46 @@
 <template>
   <!-- Piano contianer -->
   <div class="mt-5 container has-text-centered">
+    <!-- Display controls -->
+    <Controls
+      class="mb-5"
+      v-on:oscillator-click-event="handleOscillatorClick"
+    />
     <!-- Loop through all the keys -->
     <div class="key-container" v-for="key in keys" :key="key.id">
-      <Key v-bind:pianoKey="key" />
+      <Key v-bind:pianoKey="key" v-on:key-click-event="handleKeyClick" />
     </div>
   </div>
 </template>
 
 <script>
 import Key from "./Key";
+import Controls from "./Controls";
 // import Tone.js to play sounds
 import * as Tone from "tone";
 
 export default {
   name: "Piano",
-  components: { Key },
+  components: { Key, Controls },
   data: () => ({
-    whiteKeyCount: 14,
-    blackKeyCount: 10,
+    synth: new Tone.Synth({
+      oscillator: {
+        type: "sine",
+      },
+      envelope: {
+        // attack goes from 0 to 1 in steps of 0.01
+        attack: 0.1,
+
+        // decay goes from 0 to 1 in steps of 0.01
+        decay: 1,
+
+        // sustain goes from 0 to 1 in steps of 0.01
+        sustain: 0.35,
+
+        // release goes from 0 to 1 in steps of 0.01
+        release: 0.1,
+      },
+    }),
     keys: [
       {
         id: 1,
@@ -107,15 +129,14 @@ export default {
 
       // convert the Unicode value to ASCII
       var pressedCharacter = String.fromCharCode(pressedKeyCode);
-      console.log(pressedCharacter + "key was pressed");
 
       var pianoKey = this.keys.filter(function(e) {
         return e.character === pressedCharacter;
       });
       try {
         // play the sound for the pressed key
-        const synth = new Tone.Synth().toDestination();
-        synth.triggerAttackRelease(pianoKey[0].keyName + "4", "8n");
+        this.synth.toDestination();
+        this.synth.triggerAttackRelease(pianoKey[0].keyName + "4", "8n");
       } catch (err) {
         console.log(err);
       }
@@ -123,6 +144,17 @@ export default {
       // Cancel the default action to avoid it being handled twice
       event.preventDefault();
     });
+  },
+  methods: {
+    handleKeyClick(pianoKey) {
+      // play sound from the clicked key
+      this.synth.toDestination();
+      this.synth.triggerAttackRelease(pianoKey.keyName + "4", "8n");
+    },
+    handleOscillatorClick(newOscillator) {
+      // change the oscillator on click to the new oscillator
+      this.synth.oscillator.type = newOscillator;
+    },
   },
 };
 </script>

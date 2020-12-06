@@ -5,24 +5,18 @@
       'black-key': pianoKey.type === 'black',
       'white-key': pianoKey.type === 'white',
     }"
-    @click="keyClickHandler"
+    @mousedown="keyClick"
   ></div>
 </template>
 
 <script>
-// import Tone.js to play sounds
-import * as Tone from "tone";
-
 export default {
   name: "Key",
   props: ["pianoKey"],
   methods: {
-    keyClickHandler() {
-      // create a synth and connect it to the main output (your speakers)
-      const synth = new Tone.Synth().toDestination();
-
-      // play the note from the clicked key for the duration of an 8th note
-      synth.triggerAttackRelease(this.pianoKey.keyName + "4", "8n");
+    keyClick() {
+      // send a custom event with the piano key that was clicked
+      this.$emit("key-click-event", this.pianoKey);
     },
   },
 };
@@ -47,6 +41,7 @@ export default {
   display: inline-block;
   cursor: pointer;
   padding: 10%;
+  border-radius: 4px;
   box-shadow: -0.3rem 0.3rem 0 0 #bae8e8;
 }
 .key:active {
