@@ -10,19 +10,32 @@
     <div class="key-container" v-for="key in keys" :key="key.id">
       <Key v-bind:pianoKey="key" v-on:key-click-event="handleKeyClick" />
     </div>
+    <div>
+      <strong> For debugging only</strong>
+      <br />
+      Attack: {{ this.synth.envelope.attack }}
+      <br />
+      Sustain: {{ this.synth.envelope.sustain }}
+      <br />
+      Decay: {{ this.synth.envelope.decay }}
+      <br />
+      Release: {{ this.synth.envelope.release }}
+      <br />
+      Oscillator: {{ this.synth.oscillator.type }}
+    </div>
   </div>
 </template>
 
 <script>
 import Key from "./Key";
 import Controls from "./Controls";
-// import Tone.js to play sounds
 import * as Tone from "tone";
 
 export default {
   name: "Piano",
   components: { Key, Controls },
   data: () => ({
+    customAttack: 0.1,
     synth: new Tone.Synth({
       oscillator: {
         type: "sine",
@@ -154,6 +167,9 @@ export default {
     handleOscillatorClick(newOscillator) {
       // change the oscillator on click to the new oscillator
       this.synth.oscillator.type = newOscillator;
+
+      // update the synth state to reflect changes
+      this.$forceUpdate();
     },
   },
 };

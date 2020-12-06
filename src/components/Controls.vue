@@ -2,7 +2,7 @@
   <div class="mt-5 container">
     <div class="buttons is-centered">
       <div>
-        <p class="custom-text-dark custom-regular-text">A</p>
+        <p class="custom-text-dark custom-regular-text">{{ customAttack }}</p>
         <VueCircleSlider
           v-model="customAttack"
           :circle-width="4"
@@ -15,9 +15,9 @@
         />
       </div>
       <div>
-        <p class="custom-text-dark custom-regular-text">D</p>
+        <p class="custom-text-dark custom-regular-text">{{ customDecay }}</p>
         <VueCircleSlider
-          v-model="customDelay"
+          v-model="customDecay"
           :circle-width="4"
           :progress-width="6"
           :knob-radius="6"
@@ -28,7 +28,7 @@
         />
       </div>
       <div>
-        <p class="custom-text-dark custom-regular-text">S</p>
+        <p class="custom-text-dark custom-regular-text">{{ customSustain }}</p>
         <VueCircleSlider
           v-model="customSustain"
           :circle-width="4"
@@ -41,7 +41,9 @@
         />
       </div>
       <div>
-        <p class="custom-text-dark custom-regular-text">R</p>
+        <p class="custom-text-dark custom-regular-text">
+          {{ customRelease }}
+        </p>
         <VueCircleSlider
           v-model="customRelease"
           :circle-width="4"
@@ -86,10 +88,10 @@ export default {
   name: "Controls",
   components: { VueCircleSlider },
   data: () => ({
-    customAttack: 0.1,
-    customDelay: 0.1,
-    customRelease: 0.1,
-    customSustain: 0.1,
+    customAttack: 1,
+    customDecay: 1,
+    customRelease: 1,
+    customSustain: 1,
   }),
   methods: {
     // send custom events with the oscillators that were clicked
