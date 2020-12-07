@@ -6,7 +6,7 @@
   <img src="Screenshot.png" width="50%" style="border-radius: 10px;">
 </p>
 
-## Getting Started
+## Installation
 
 1. Setup project with `npm install`
 2. Compile for development with `npm run serve`
@@ -16,3 +16,7 @@
 ## Customize configuration
 
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+## Contributing
+
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
