@@ -1,5 +1,5 @@
 <template>
-  <!-- Piano contianer -->
+  <!-- Piano container -->
   <div class="mt-5 container has-text-centered">
     <!-- Display controls -->
     <Controls
@@ -10,7 +10,7 @@
     <div class="key-container" v-for="key in keys" :key="key.id">
       <Key v-bind:pianoKey="key" v-on:key-click-event="handleKeyClick" />
     </div>
-    <div>
+    <!-- <div>
       <strong> For debugging only</strong>
       <br />
       Attack: {{ this.synth.envelope.attack }}
@@ -22,7 +22,7 @@
       Release: {{ this.synth.envelope.release }}
       <br />
       Oscillator: {{ this.synth.oscillator.type }}
-    </div>
+    </div> -->
   </div>
 </template>
 

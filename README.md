@@ -13,7 +13,7 @@
 3. Compile and minify for production with `npm run build`
 4. Lint and fix files with `npm run lint`
 
-## Customize configuration
+## Customize Configuration
 
 See [Configuration Reference](https://cli.vuejs.org/config/).
 

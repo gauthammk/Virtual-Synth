@@ -16,12 +16,12 @@ export default {
 <style>
 .custom-text-dark {
   color: #272343;
-  font-family: "Avenir";
+  font-family: "Montserrat Alternates";
 }
 .custom-heading {
   font-weight: 900;
 }
 .custom-regular-text {
-  font-weight: 100;
+  font-weight: 300;
 }
 </style>
