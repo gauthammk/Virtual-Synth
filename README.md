@@ -17,12 +17,12 @@
 
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
-## Contributing
-
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-## Resources Used
+## Resources
 
 - Audio synthesizing with [Tone.js](https://tonejs.github.io/)
 - Styling with [Bulma](https://bulma.io/)
 - Icons from [The Noun Project](https://thenounproject.com/)
+
+## Contributing
+
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
