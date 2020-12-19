@@ -14,19 +14,6 @@
     <div class="key-container" v-for="key in keys" :key="key.id">
       <Key v-bind:pianoKey="key" v-on:key-click-event="handleKeyClick" />
     </div>
-    <div>
-      <strong> For debugging only</strong>
-      <br />
-      Attack: {{ this.synth.envelope.attack }}
-      <br />
-      Sustain: {{ this.synth.envelope.sustain }}
-      <br />
-      Decay: {{ this.synth.envelope.decay }}
-      <br />
-      Release: {{ this.synth.envelope.release }}
-      <br />
-      Oscillator: {{ this.synth.oscillator.type }}
-    </div>
   </div>
 </template>
 
