@@ -1,28 +1,19 @@
 <template>
-  <!-- Piano container -->
+  <!-- Piano contianer -->
   <div class="mt-5 container has-text-centered">
     <!-- Display controls -->
     <Controls
       class="mb-5"
       v-on:oscillator-click-event="handleOscillatorClick"
+      v-on:attack-change-event="handleAttackChange"
+      v-on:sustain-change-event="handleSustainChange"
+      v-on:decay-change-event="handleDecayChange"
+      v-on:release-change-event="handleReleaseChange"
     />
     <!-- Loop through all the keys -->
     <div class="key-container" v-for="key in keys" :key="key.id">
       <Key v-bind:pianoKey="key" v-on:key-click-event="handleKeyClick" />
     </div>
-    <!-- <div>
-      <strong> For debugging only</strong>
-      <br />
-      Attack: {{ this.synth.envelope.attack }}
-      <br />
-      Sustain: {{ this.synth.envelope.sustain }}
-      <br />
-      Decay: {{ this.synth.envelope.decay }}
-      <br />
-      Release: {{ this.synth.envelope.release }}
-      <br />
-      Oscillator: {{ this.synth.oscillator.type }}
-    </div> -->
   </div>
 </template>
 
@@ -45,7 +36,7 @@ export default {
         attack: 0.1,
 
         // decay goes from 0 to 1 in steps of 0.01
-        decay: 1,
+        decay: 0.75,
 
         // sustain goes from 0 to 1 in steps of 0.01
         sustain: 0.35,
@@ -167,8 +158,24 @@ export default {
     handleOscillatorClick(newOscillator) {
       // change the oscillator on click to the new oscillator
       this.synth.oscillator.type = newOscillator;
+      this.$forceUpdate();
+    },
+    handleAttackChange(customAttack) {
+      this.synth.envelope.attack = customAttack / 100;
 
-      // update the synth state to reflect changes
+      // force update to reflect changes
+      this.$forceUpdate();
+    },
+    handleSustainChange(customSustain) {
+      this.synth.envelope.sustain = customSustain / 100;
+      this.$forceUpdate();
+    },
+    handleDecayChange(customDecay) {
+      this.synth.envelope.decay = customDecay / 100;
+      this.$forceUpdate();
+    },
+    handleReleaseChange(customRelease) {
+      this.synth.envelope.release = customRelease / 100;
       this.$forceUpdate();
     },
   },

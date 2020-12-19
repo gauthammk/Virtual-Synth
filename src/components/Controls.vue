@@ -1,8 +1,8 @@
 <template>
   <div class="mt-5 container">
     <div class="buttons is-centered">
-      <div>
-        <p class="custom-text-dark custom-regular-text">{{ customAttack }}</p>
+      <div @mouseup="attackChange">
+        <p class="custom-text-dark custom-regular-text">A</p>
         <VueCircleSlider
           v-model="customAttack"
           :circle-width="4"
@@ -14,8 +14,8 @@
           knob-color="#272343"
         />
       </div>
-      <div>
-        <p class="custom-text-dark custom-regular-text">{{ customDecay }}</p>
+      <div @mouseup="decayChange">
+        <p class="custom-text-dark custom-regular-text">D</p>
         <VueCircleSlider
           v-model="customDecay"
           :circle-width="4"
@@ -27,8 +27,8 @@
           knob-color="#272343"
         />
       </div>
-      <div>
-        <p class="custom-text-dark custom-regular-text">{{ customSustain }}</p>
+      <div @mouseup="sustainChange">
+        <p class="custom-text-dark custom-regular-text">S</p>
         <VueCircleSlider
           v-model="customSustain"
           :circle-width="4"
@@ -40,9 +40,9 @@
           knob-color="#272343"
         />
       </div>
-      <div>
+      <div @mouseup="releaseChange">
         <p class="custom-text-dark custom-regular-text">
-          {{ customRelease }}
+          R
         </p>
         <VueCircleSlider
           v-model="customRelease"
@@ -88,10 +88,10 @@ export default {
   name: "Controls",
   components: { VueCircleSlider },
   data: () => ({
-    customAttack: 1,
-    customDecay: 1,
-    customRelease: 1,
-    customSustain: 1,
+    customAttack: 10,
+    customDecay: 75,
+    customSustain: 35,
+    customRelease: 10,
   }),
   methods: {
     // send custom events with the oscillators that were clicked
@@ -106,6 +106,22 @@ export default {
     },
     sawtoothOscillatorClick() {
       this.$emit("oscillator-click-event", "sawtooth");
+    },
+    attackChange() {
+      console.log("Attack was changed.");
+      this.$emit("attack-change-event", this.customAttack);
+    },
+    sustainChange() {
+      console.log("Sustain was changed.");
+      this.$emit("sustain-change-event", this.customSustain);
+    },
+    decayChange() {
+      console.log("Decay was changed.");
+      this.$emit("decay-change-event", this.customDecay);
+    },
+    releaseChange() {
+      console.log("Release was changed.");
+      this.$emit("release-change-event", this.customRelease);
     },
   },
 };
