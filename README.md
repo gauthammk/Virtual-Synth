@@ -3,7 +3,7 @@
 **_A minimal synth with an oscillator and ADSR envelope built with Vue.js, Tone.js and Bulma_**
 
 <p align="center">
-  <img src="Screenshot.png" width="50%" style="border-radius: 10px;">
+  <img src="Screenshot.png">
 </p>
 
 ## Getting Started
