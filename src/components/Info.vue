@@ -1,6 +1,6 @@
 <template>
   <div class="mt-5 container has-text-centered">
-    <a class="button" href="https://github.com/gauthammk/Virtual-Piano">
+    <a class="button" href="https://github.com/gauthammk/Virtual-Synth">
       <span class="is-large mr-2">
         <i class="fab fa-github custom-text-dark"></i>
       </span>
