@@ -2,6 +2,8 @@
 
 **_A minimal synth with an oscillator and ADSR envelope built with Vue.js, Tone.js and Bulma_**
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/cc940052-15e2-408c-bf93-61689cf8899c/deploy-status)](https://app.netlify.com/sites/virtual-synth/deploys)
+
 <p align="center">
   <img src="Screenshot.png">
 </p>
