@@ -6,7 +6,7 @@
   <img src="Screenshot.png" width="50%" style="border-radius: 10px;">
 </p>
 
-## Installation
+## Getting Started
 
 1. Setup project with `npm install`
 2. Compile for development with `npm run serve`
