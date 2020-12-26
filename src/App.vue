@@ -2,7 +2,7 @@
   <div class="section is-vcentered">
     <Heading />
     <Piano />
-    <Info />
+    <Links />
   </div>
 </template>
 
@@ -10,11 +10,11 @@
 import "./../node_modules/bulma/css/bulma.css";
 import Heading from "./components/Heading";
 import Piano from "./components/Piano";
-import Info from "./components/Info";
+import Links from "./components/Links";
 
 export default {
   name: "App",
-  components: { Heading, Piano, Info },
+  components: { Heading, Piano, Links },
   methods: {},
 };
 </script>
