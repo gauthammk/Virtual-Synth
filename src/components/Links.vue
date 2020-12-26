@@ -40,15 +40,15 @@
           <strong
             >a - C, w - C#, s - D, e - D#, d - E, f - F, t - F#, g - G, y - G#,
             h - A, u - A#, j - B</strong
-          >
+          >.
           <br />
           2. Click on the waveform buttons to toggle between the sine, square,
-          triangle and sawtooth waveforms
+          triangle and sawtooth waveforms.
           <br />
           3. Move the sliders to modify the ADSR(Attack-Delay-Sustain-Release)
           envelope. For more information about <strong>ADSR</strong> envelopes,
           click
-          <a href="https://en.wikipedia.org/wiki/Envelope_(music)">here</a>
+          <a href="https://en.wikipedia.org/wiki/Envelope_(music)">here</a>.
           <br />
           <br />If you found this project interesting, please give us a
           <a href="">star</a> on <strong>Github</strong> and
