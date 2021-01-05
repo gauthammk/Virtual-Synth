@@ -1,12 +1,14 @@
 <template>
   <div class="mt-5 container">
     <div class="buttons is-centered">
+      <!-- Guide button -->
       <a class="button" @click="isGuideActive = true">
         <span class="is-large mr-2">
           <i class="fas fa-info-circle custom-text-dark"></i>
         </span>
         <span class="custom-text-dark custom-regular-text">Guide</span>
       </a>
+      <!-- Github button -->
       <a class="button" href="https://github.com/gauthammk/Virtual-Synth">
         <span class="is-large mr-2">
           <i class="fab fa-github custom-text-dark"></i>
@@ -21,7 +23,7 @@
         @click="isGuideActive = !isGuideActive"
       ></div>
       <div class="modal-content">
-        <div class="notification  custom-notification custom-text-dark">
+        <div class="notification custom-notification custom-text-dark">
           <button
             class="delete"
             aria-label="close"
@@ -55,7 +57,7 @@
 <script>
 export default {
   name: "Info",
-  data: function() {
+  data: function () {
     return {
       isGuideActive: true,
     };
