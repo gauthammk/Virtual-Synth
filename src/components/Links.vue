@@ -13,12 +13,6 @@
         </span>
         <span class="custom-text-dark custom-regular-text">Source</span>
       </a>
-      <a class="button" :href="twitterHref">
-        <span class="is-large mr-2">
-          <i class="fab fa-twitter custom-text-dark"></i>
-        </span>
-        <span class="custom-text-dark custom-regular-text">Tweet</span>
-      </a>
     </div>
     <!-- Display the guide if isGuideActive is true -->
     <div class="modal" v-bind:class="{ 'is-active': isGuideActive }">
@@ -51,9 +45,7 @@
           <a href="https://en.wikipedia.org/wiki/Envelope_(music)">here</a>.
           <br />
           <br />If you found this project interesting, please give us a
-          <a href="">star</a> on <strong>Github</strong> and
-          <a class="twitter-share-button" :href="twitterHref">share</a>
-          our work on <strong>Twitter</strong>. Have fun!
+          <a href="">star</a> on <strong>Github</strong>. Have fun!
         </div>
       </div>
     </div>
@@ -66,11 +58,6 @@ export default {
   data: function() {
     return {
       isGuideActive: true,
-      twitterHref:
-        "http://twitter.com/intent/tweet?text=" +
-        escape(
-          "Hey everyone, check out this virtual synth! \n\nhttps://virtual-synth.netlify.app/ \n\n#virtualsynth #music #ADSR #webdev \n\n@i_amgmk @Anannya13379222"
-        ),
     };
   },
 };
